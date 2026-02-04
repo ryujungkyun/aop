@@ -2,6 +2,7 @@ package hello.aop.pointcut;
 
 import hello.aop.member.MemberService;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -50,7 +51,7 @@ public class ParameterTest {
 
         @Before("allMember() && args(arg,..)")
         public void logArgs3(String arg) {
-
+            log.info("[logArgs3] arg={}", arg);
         }
     }
 }
